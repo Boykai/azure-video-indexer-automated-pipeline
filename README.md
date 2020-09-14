@@ -24,23 +24,23 @@ TODO: Guide users through getting your code up and running on their own system. 
 ## Installation process
 ### Azure Resource Deployments
 * [Deploy Azure Function](https://docs.microsoft.com/en-us/azure/azure-functions/)
-    * Subscription: <your-azure-subscription>
-    * Resource Group: <your-resource-group>
-    * Function App Name: <your-function-app-name>
+    * Subscription: your-azure-subscription
+    * Resource Group: your-resource-group
+    * Function App Name: your-function-app-name
     * Runtimestack: Python
     * Version: 3.6
-    * Region: <your-region> 
-    * Storage account: <your-storage-account-0>
+    * Region: your-region 
+    * Storage account: your-storage-account-0
     * Operating system: Linux
     * Plan: Consumption (Serverless)
     * Enable Application Insights: Yes
-    * Application Insights: <your-application-insights> 
+    * Application Insights: your-application-insights 
 
 * [Deploy Azure Storage Account](https://docs.microsoft.com/en-us/azure/storage/blobs/)
-    * Subscription: <your-azure-subscription>
-    * Resource Group: <your-resource-group>
-    * Storage Account Name: <your-storage-account-1>
-    * Location: <your-region>
+    * Subscription: your-azure-subscription
+    * Resource Group: your-resource-group
+    * Storage Account Name: your-storage-account-1
+    * Location: your-region
     * Performance: Standard
     * Account kind: StorageV2 (general purpose v2)
     * Replication: RA-GRS
@@ -53,56 +53,56 @@ TODO: Guide users through getting your code up and running on their own system. 
     * Hierarchical namespace: Disabled
 
 * [Deploy Azure Media Services](https://docs.microsoft.com/en-us/azure/media-services/latest/)
-    * Account Name: <your-media-services-name>
-    * Subscription: <your-azure-subscription>
-    * Resource Group: <your-resource-group>
-    * Location: <your-region>
-    * Storage Account: <your-storage-account-1>
+    * Account Name: your-media-services-name
+    * Subscription: your-azure-subscription
+    * Resource Group: your-resource-group
+    * Location: your-region
+    * Storage Account: your-storage-account-1
 
 ## Dependencies
 ### Import Repo into Azure DevOps
-    * Import Repo into Azure DevOps
-    * Select Pipelines
-    * Select New pipeline
-    * Select Azure Repos Git
-    * Select <your-repo>
-    * Select Python Function App to Linux on Azure
-    * Select <your-azure-subscription> 
-    * Select Continue
-    * Select <your-function-app-name> 
-    * Select Validate and configure
-    * Select Run pipeline
+* Import Repo into Azure DevOps
+* Select Pipelines
+* Select New pipeline
+* Select Azure Repos Git
+* Select your-repo
+* Select Python Function App to Linux on Azure
+* Select your-azure-subscription 
+* Select Continue
+* Select your-function-app-name 
+* Select Validate and configure
+* Select Run pipeline
 
 ### Create Content Container for Videos
-    * Create new Azure Storage Container in <your-storage-account-1>
-    * Container Name: <your-storage-container-name>
-    * Public access level: Container (anonymous read access for container and blobs)
-        * All container and blob data can be read by anonymous request. Clients can enumerate blobs within the container by anonymous request, but cannot enumerate containers within the storage account.
+* Create new Azure Storage Container in your-storage-account-1
+* Container Name: your-storage-container-name
+* Public access level: Container (anonymous read access for container and blobs)
+    * All container and blob data can be read by anonymous request. Clients can enumerate blobs within the container by anonymous request, but cannot enumerate containers within the storage account.
 
 ### Update Azure Function Application Settings
-* Update <your-function-app-name> Application settings
-* AF_PUTVIDEO_URL: <your-PutVideo-endpoint>
-* SA_CONNX_STRING: <your-storage-account-1-connection-string>
-* SA_TABLE_INSIGHTS: <your-table-insights-name>
-* SA_TABLE_TRACKER: <your-table-tracker-name>
-* VI_ACCOUNT_ID: <your-video-indexer-account-id>
-* VI_CALLBACK_URL: <your-DownloadInsights-endpoint>
-* VI_KEY: <your-video-indexer-key>
-* VI_LOCATION: <your-video-indexer-region>
+* Update your-function-app-name Application settings
+* AF_PUTVIDEO_URL: your-PutVideo-endpoint
+* SA_CONNX_STRING: your-storage-account-1-connection-string
+* SA_TABLE_INSIGHTS: your-table-insights-name
+* SA_TABLE_TRACKER: your-table-tracker-name
+* VI_ACCOUNT_ID: your-video-indexer-account-id
+* VI_CALLBACK_URL: your-DownloadInsights-endpoint
+* VI_KEY: your-video-indexer-key
+* VI_LOCATION: your-video-indexer-region
 
 ## Latest releases
 ## API references
     * [Video Indexer API](https://api-portal.videoindexer.ai/)
 
 # Build and Test
-* Approach 1: Upload videos to <your-storage-account-1>, pipeline will trigger automatically
-* Approach 2: POST <your-PutVideo-endpoint>
-		{'path': <your-blob-container-name>/<your-blob-full-path>
-    		 'name': <your-blob-file-name>,
-		 'uri': <your-blob-download-uri>}
+* Approach 1: Upload videos to your-storage-account-1, pipeline will trigger automatically
+* Approach 2: POST your-PutVideo-endpoint
+		{'path': your-blob-container-name/your-blob-full-path
+    		 'name': your-blob-file-name,
+		 'uri': your-blob-download-uri}
 
 * Validate processed videos in Video Indexer Portal.
-* Validate AI automated generation of a dataset inside <your-storage-account-1> in <your-table-tracker-name>
+* Validate AI automated generation of a dataset inside your-storage-account-1 in your-table-tracker-name
 
 # Contribute
 Please contact James Tooles @ Microsoft.
