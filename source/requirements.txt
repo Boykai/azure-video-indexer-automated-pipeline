@@ -1,7 +1,7 @@
 azure-functions==1.2.0
 azure_storage==0.36.0
 azure-storage-blob==12.3.0
-requests==2.22.0
+requests==2.31.0
 azure-cosmosdb-table==1.0.6
 pathlib2==2.3.2
 pandas==1.0.3
